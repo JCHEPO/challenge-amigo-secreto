@@ -6,9 +6,15 @@ function agregarAmigo() {
     } else {
         listaAmigos.push(document.getElementById(`amigo`).value);
         console.log(listaAmigos);
+        limpiarCampo();
         return;
     
     }
     return;
 }
 
+function limpiarCampo(){
+    let valorCampo = document.querySelector('#amigo').value=0;
+}
+
+agregarAmigo()
