@@ -1,20 +1,30 @@
 let listaAmigos = [];
+function textoElemento (elemento,texto) {
+    let elementoHTML = document.querySelector(elemento);
+    elementoHTML.innerHTML=texto;
+}
+
 function agregarAmigo() {
-        // si el nombre está incluido, lo agregamos, si no ponemos alert.
-    if(listaAmigos.includes(document.getElementById(`amigo`).value)){
+    let nombre = document.getElementById('amigo').value.trim();
+
+    if (nombre === ""){   // verificar que la casilla esté vacia
+        textoElemento('p', 'Ingresa un nombre');
+        return
+    }
+
+        
+    if(listaAmigos.includes(nombre)){ // alert si el nombre ya está en la lista
         alert("ese nombre ya existe");
-    } else {
-        listaAmigos.push(document.getElementById(`amigo`).value);
+    } else {        // si el nombre no está incluido, lo agregamos
+        listaAmigos.push(nombre);
         console.log(listaAmigos);
         limpiarCampo();
-        return;
-    
-    }
+        }
     return;
 }
 
 function limpiarCampo(){
-    let valorCampo = document.querySelector('#amigo').value=0;
+    let valorCampo = document.querySelector('#amigo').value="";
 }
 
 agregarAmigo()
