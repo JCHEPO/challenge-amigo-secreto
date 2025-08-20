@@ -1,3 +1,8 @@
+function textoElemento (elemento,texto){
+    let titulo = documents.querySelector();
+    titulo.innerHTML = texto;
+}
+
 let listaAmigos = [];
 function agregarAmigo() {
         // si el nombre está incluido, lo agregamos, si no ponemos alert.
@@ -14,7 +19,6 @@ function agregarAmigo() {
 }
 
 function limpiarCampo(){
-    let valorCampo = document.querySelector('#amigo').value=0;
+    let valorCampo = document.querySelector('#amigo').value="";
 }
 
-agregarAmigo()
