@@ -1,6 +1,6 @@
 let listaAmigos =[];
 
-function textoElemento (elemento,texto) {
+function ElementoTextoFun (elemento,texto) {
     let elementoHTML = document.querySelector(elemento);
     elementoHTML.innerHTML=texto;
 }
@@ -9,7 +9,7 @@ function agregarAmigo() {
     let nombre = document.getElementById('amigo').value.trim();
 
     if (nombre === ""){   // verificar que la casilla esté vacia
-        textoElemento('p', 'Ingresa un nombre');
+        elementoTextoFun('p', 'Ingresa un nombre');
         return
     }
         
@@ -35,6 +35,7 @@ function sortearAmigo(){
         let indice=Math.floor(Math.random()*(listaAmigos.length-1))+1; // generar un indice dentro del array
         console.log(indice); 
         console.log(listaAmigos[indice]);
+        ElementoTextoFun('h2', `Tu amigo secreto es ${listaAmigos[indice]}`);
     }
 }
 
