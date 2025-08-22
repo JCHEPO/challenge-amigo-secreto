@@ -1,4 +1,5 @@
-let listaAmigos = [];
+let listaAmigos =[];
+
 function textoElemento (elemento,texto) {
     let elementoHTML = document.querySelector(elemento);
     elementoHTML.innerHTML=texto;
@@ -11,7 +12,6 @@ function agregarAmigo() {
         textoElemento('p', 'Ingresa un nombre');
         return
     }
-
         
     if(listaAmigos.includes(nombre)){ // alert si el nombre ya está en la lista
         alert("ese nombre ya existe");
@@ -27,4 +27,14 @@ function limpiarCampo(){
     let valorCampo = document.querySelector('#amigo').value="";
 }
 
-agregarAmigo()
+
+function sortearAmigo(){
+    if(listaAmigos.length===0) {
+        alert("Tu lista de amigos está vacia");
+    } else {
+        let indice=Math.floor(Math.random()*(listaAmigos.length-1))+1; // generar un indice dentro del array
+        console.log(indice); 
+        console.log(listaAmigos[indice]);
+    }
+}
+
